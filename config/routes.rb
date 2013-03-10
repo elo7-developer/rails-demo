@@ -1,4 +1,10 @@
 Demo::Application.routes.draw do
+  get "github/index"
+
+  get "github/repos"
+
+  get "github/commits"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
