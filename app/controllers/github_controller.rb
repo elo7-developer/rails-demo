@@ -3,6 +3,8 @@ class GithubController < ApplicationController
   end
 
   def repos
+    @user = params[:user]
+    @repos = Github.repos(@user)
   end
 
   def commits
