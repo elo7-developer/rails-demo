@@ -37,6 +37,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-group :development, :test do
+group :test do
   gem 'webmock', '~> 1.11'
 end
