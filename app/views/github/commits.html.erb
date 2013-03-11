@@ -1,2 +1,13 @@
-<h1>Github#commits</h1>
-<p>Find me in app/views/github/commits.html.erb</p>
+<h1>Commits for <%= @owner %>/<%= @repo %></h1>
+
+<% if @commits.nil? %>
+  <p>Could not fetch commits for this repo</p>
+<% elsif !@commits.blank? %>
+  <ul>
+    <% for commit in @commits %>
+      <li><%= commit['commit']['message'] %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This repo has no commits</p>  
+<% end %>

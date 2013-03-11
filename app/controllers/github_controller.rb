@@ -8,5 +8,8 @@ class GithubController < ApplicationController
   end
 
   def commits
+    @owner = params[:owner]
+    @repo = params[:repo]
+    @commits = Github.commits(@owner, @repo)
   end
 end

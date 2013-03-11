@@ -12,4 +12,13 @@ class Github
     rescue OpenURI::HTTPError
     end
   end
+
+  def self.commits(owner, repo)
+    begin
+      f = open(API_URL + '/repos/' + owner + '/' + repo + '/commits',
+        :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)
+      ActiveSupport::JSON.decode(f)
+    rescue OpenURI::HTTPError
+    end
+  end
 end

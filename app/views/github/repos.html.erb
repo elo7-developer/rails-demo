@@ -5,7 +5,8 @@
 <% elsif !@repos.blank? %>
   <ul>
     <% for repo in @repos %>
-      <li><%= repo['name'] %></li>
+
+      <li><%= link_to(repo['name'], :action => 'commits', :owner => repo['owner']['login'], :repo => repo['name']) %></li>
     <% end %>
   </ul>
 <% else %>
