@@ -11,5 +11,9 @@ class GithubController < ApplicationController
     @owner = params[:owner]
     @repo = params[:repo]
     @commits = Github.commits(@owner, @repo)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 end

@@ -5,10 +5,10 @@
 <% elsif !@repos.blank? %>
   <ul>
     <% for repo in @repos %>
-
-      <li><%= link_to(repo['name'], :action => 'commits', :owner => repo['owner']['login'], :repo => repo['name']) %></li>
+      <li><%= link_to(repo['name'], :remote => true, :action => 'commits', :owner => repo['owner']['login'], :repo => repo['name']) %></li>
     <% end %>
   </ul>
 <% else %>
   <p>This user has no repos</p>
 <% end %>
+<div id="commits"></div>
